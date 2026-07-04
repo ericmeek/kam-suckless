@@ -1,0 +1,3 @@
+[submodule "suckless/dwm"]
+	path = suckless/dwm
+	url = git@github.com:ericmeek/dwm.git
