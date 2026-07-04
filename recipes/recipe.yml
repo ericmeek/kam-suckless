@@ -6,8 +6,8 @@ name: kam-suckless
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 42 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/base-main
+image-version: 44 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -17,14 +17,45 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
+  - type: script
+    scripts:
+      - hello.sh
+
   - type: dnf
     repos:
       copr:
         - atim/starship
     install:
       packages:
-        - micro
-        - starship
+        # login
+        - greetd
+        - tuigreet
+
+        # X11
+        - xorg-x11-server-Xorg
+        - xorg-x11-xinit
+        - xorg-x11-xauth
+        - xsetroot
+        - xrandr
+
+        # build tools
+        - gcc
+        - make
+        - pkgconf
+        - libX11-devel
+        - libXft-devel
+        - libXinerama-devel
+        - libXrender-devel
+
+        # utilities
+        - git
+        - vim
+        - emacs
+        - tmux
+        - curl
+        - wget
+        - fastfetch
+
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -43,3 +74,4 @@ modules:
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
+
