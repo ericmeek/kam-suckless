@@ -1,5 +1,5 @@
-RUN --mount=type=bind,src=.,target=/src \
-    cp -a /src/suckless/dwm /tmp/dwm && \
+RUN --mount=type=bind,src=.,target=/src,Z \
+    cp -r /src/suckless/dwm /tmp/ && \
     cd /tmp/dwm && \
     make clean && \
     make && \
