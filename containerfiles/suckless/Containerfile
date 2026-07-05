@@ -1,3 +1,5 @@
-COPY suckless/dwm /tmp/dwm
+COPY suckless /tmp/suckless
+COPY containerfiles/suckless/build-suckless.sh /tmp/
 
-RUN ls -la /tmp/dwm
+RUN chmod +x /tmp/build-suckless.sh && \
+    /tmp/build-suckless.sh
