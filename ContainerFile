@@ -123,10 +123,10 @@ RUN \
 
 # Labels are added last since they cause cache misses with buildah
 LABEL io.artifacthub.package.readme-url="https://raw.githubusercontent.com/blue-build/cli/main/README.md"
-LABEL org.blue-build.build-id="8994ff5f-88d8-4554-b6f3-b32eacd742cb"
+LABEL org.blue-build.build-id="7341838a-4d8d-4070-a246-0aedfd626d94"
 LABEL org.opencontainers.image.base.digest="sha256:436f616a397e37d94f8e663e1070edfa271f096485026f27787e40cff79b7beb"
 LABEL org.opencontainers.image.base.name="ghcr.io/ublue-os/base-main:44"
-LABEL org.opencontainers.image.created="2026-07-05T21:41:57.732456613+00:00"
+LABEL org.opencontainers.image.created="2026-07-05T23:01:39.383090503+00:00"
 LABEL org.opencontainers.image.description="This is my personal OS image."
 LABEL org.opencontainers.image.source=""
 LABEL org.opencontainers.image.title="kam-suckless"

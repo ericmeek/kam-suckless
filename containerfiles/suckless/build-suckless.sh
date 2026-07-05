@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-for app in dwm
+for app in \
+	dwm \
+	st \
+	dmenu \
+	slstatus \
+	slock
 do
     echo "==> Building $app"
 

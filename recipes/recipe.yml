@@ -41,6 +41,7 @@ modules:
         - libXft-devel
         - libXinerama-devel
         - libXrender-devel
+        - libXrandr-devel
 
         # utilities
         - git
