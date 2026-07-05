@@ -1,10 +1,6 @@
 RUN --mount=type=bind,src=.,target=/src \
-    mkdir -p /usr/share && \
-    echo "=== pwd ===" > /usr/share/repository.txt && \
-    pwd >> /usr/share/repository.txt && \
-    echo >> /usr/share/repository.txt && \
-    echo "=== ls /src ===" >> /usr/share/repository.txt && \
-    ls -la /src >> /usr/share/repository.txt && \
-    echo >> /usr/share/repository.txt && \
-    echo "=== find /src ===" >> /usr/share/repository.txt && \
-    find /src -maxdepth 3 >> /usr/share/repository.txt
+    cp -a /src/suckless/dwm /tmp/dwm && \
+    cd /tmp/dwm && \
+    make clean && \
+    make && \
+    make PREFIX=/usr install
