@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cd /var/home/eric/Projects/kam-suckless/suckless/dwm
+{
+    echo "PWD:"
+    pwd
 
-make clean
-make
+    echo
+    echo "Environment:"
+    env | sort
 
-cp dwm /usr/bin/
+    echo
+    echo "Listing /ctx:"
+    ls -la /ctx || true
 
-echo "Built dwm successfully" > /usr/share/kam-suckless-build.txt
-/usr/bin/dwm -v >> /usr/share/kam-suckless-build.txt 2>&1 || true
+    echo
+    echo "Finding dwm under /ctx:"
+    find /ctx -maxdepth 4 -type d -name dwm 2>/dev/null || true
+
+} > /usr/share/kam-suckless-build.txt
