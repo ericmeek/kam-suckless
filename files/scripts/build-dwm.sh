@@ -1,12 +1,16 @@
-#!/bin/sh
-set -euo pipefail
+#!/usr/bin/env bash
+set -e
 
-echo "Checking for dwm source..."
+{
+    echo "=== pwd ==="
+    pwd
 
-if [ -d /ctx/suckless/dwm ]; then
-	echo "Found dwm!" > /usr/share/kam-suckless-build.txt
-	ls -la /ctx/suckless/dwm >> /usr/share/kam-suckless-build.txt
-else
-	echo "Could not find /ctx/suckless/dwm" \
-		> /usr/share/kam-suckless-build.txt
-fi
+    echo
+    echo "=== ls / ==="
+    ls -la /
+
+    echo
+    echo "=== find dwm ==="
+    find / -maxdepth 4 -type d -name dwm 2>/dev/null
+
+} > /usr/share/kam-suckless-build.txt
