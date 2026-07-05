@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -euxo pipefail
 
-cd /tmp/suckless/dwm
+echo "PWD:"
+pwd
 
-make clean
-make
-make PREFIX=/usr install
+echo
+echo "Contents of /tmp:"
+ls -la /tmp
 
-rm -rf /tmp/suckless
+echo
+echo "Contents of /tmp/suckless:"
+find /tmp/suckless -maxdepth 3
