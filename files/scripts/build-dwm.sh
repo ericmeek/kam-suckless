@@ -1,16 +1,12 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
-{
-    echo "=== pwd ==="
-    pwd
+cd /var/home/eric/Projects/kam-suckless/suckless/dwm
 
-    echo
-    echo "=== ls / ==="
-    ls -la /
+make clean
+make
 
-    echo
-    echo "=== find dwm ==="
-    find / -maxdepth 4 -type d -name dwm 2>/dev/null
+cp dwm /usr/bin/
 
-} > /usr/share/kam-suckless-build.txt
+echo "Built dwm successfully" > /usr/share/kam-suckless-build.txt
+/usr/bin/dwm -v >> /usr/share/kam-suckless-build.txt 2>&1 || true
