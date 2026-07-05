@@ -1,3 +1,19 @@
 [submodule "suckless/dwm"]
 	path = suckless/dwm
 	url = git@github.com:ericmeek/dwm.git
+
+[submodule "suckless/st"]
+    path = suckless/st
+    url = git@github.com:ericmeek/st.git
+
+[submodule "suckless/dmenu"]
+    path = suckless/dmenu
+    url = git@github.com:ericmeek/dmenu.git
+
+[submodule "suckless/slstatus"]
+    path = suckless/slstatus
+    url = git@github.com:ericmeek/slstatus.git
+
+[submodule "suckless/slock"]
+    path = suckless/slock
+    url = git@github.com:ericmeek/slock.git
