@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-echo "PWD:"
-pwd
+echo "==== ls ===="
+ls -la /tmp/suckless/dwm
 
 echo
-echo "Contents of /tmp:"
-ls -la /tmp
+echo "==== find ===="
+find /tmp/suckless/dwm -maxdepth 1 -ls
 
 echo
-echo "Contents of /tmp/suckless:"
-find /tmp/suckless -maxdepth 3
+echo "==== Makefile ===="
+if [ -f /tmp/suckless/dwm/Makefile ]; then
+    echo "Makefile exists"
+else
+    echo "Makefile missing"
+fi
