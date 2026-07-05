@@ -19,7 +19,7 @@ modules:
 
   - type: script
     scripts:
-      - hello.sh
+      - build-dwm.sh
 
   - type: dnf
     repos:
