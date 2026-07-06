@@ -52,6 +52,9 @@ modules:
         - wget
         - fastfetch
 
+        # system
+        - dbus-tools
+
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
