@@ -40,7 +40,7 @@ jobs:
           submodules: recursive
 
       - name: Build Custom Image
-        uses: blue-build/github-action@v1.11
+        uses: blue-build/github-action@v1.12
         with:
           skip_checkout: true
           recipe: ${{ matrix.recipe }}
